@@ -31,9 +31,10 @@ script:
   - npm run build-prod
 
 deploy:
-    provider: firebase
-    token:
-        secure: "1/--L0AaSGQs2QmPp__nTt2L239vvJ5OvhjiRQk3aA8pc"
-    on:
-      branch: master
+  skip_cleanup: true
+  provider: firebase
+  token:
+      secure: "1/--L0AaSGQs2QmPp__nTt2L239vvJ5OvhjiRQk3aA8pc"
+  on:
+    branch: master
 
