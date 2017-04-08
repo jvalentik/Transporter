@@ -1,5 +1,7 @@
 # Transporter
 
+[![Join the chat at https://gitter.im/Transporter-manager/Lobby](https://badges.gitter.im/Transporter-manager/Lobby.svg)](https://gitter.im/Transporter-manager/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
 ## Development server
