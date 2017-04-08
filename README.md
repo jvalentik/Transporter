@@ -1,8 +1,12 @@
 # Transporter
 
+
+[![Join the chat at https://gitter.im/Transporter-manager/Lobby](https://badges.gitter.im/Transporter-manager/Lobby.svg)](https://gitter.im/Transporter-manager/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Coverage Status](https://coveralls.io/repos/github/jvalentik/Transporter/badge.svg?branch=master)](https://coveralls.io/github/jvalentik/Transporter?branch=master)
 
 [![Build Status](https://travis-ci.org/jvalentik/Transporter.svg?branch=master)](https://travis-ci.org/jvalentik/Transporter)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
