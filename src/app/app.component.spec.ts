@@ -56,4 +56,15 @@ describe('AppComponent', () => {
     const currentLanguage = translateService.currentLang;
     expect(currentLanguage).toEqual('en');
   }));
+
+  it('should change language', async(() => {
+    component.onLanguageChange();
+    let currentLang = component.getCurrentLAnguage();
+    fixture.detectChanges();
+    expect(currentLang).toEqual('SK');
+    component.onLanguageChange();
+    currentLang = component.getCurrentLAnguage();
+    fixture.detectChanges();
+    expect(currentLang).toEqual('EN');
+  }));
 });
