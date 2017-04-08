@@ -11,5 +11,8 @@ export const environment = {
     databaseURL: 'https://transporter-fcd26.firebaseio.com',
     storageBucket: 'transporter-fcd26.appspot.com',
     messagingSenderId: '308497949492'
+  },
+  googleMaps: {
+    apiKey: 'AIzaSyDJPy9QSmoRCYuka1LtxvXQiMm7KOcjFfM'
   }
 };

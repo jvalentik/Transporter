@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService } from './data.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +9,21 @@ import { DataService } from './data.service';
 export class AppComponent {
   title = 'app works!';
 
-  constructor(private dS: DataService) {
-    this.dS.getAllData().subscribe(lesson => {
-      console.log(lesson);
-    });
+  constructor(private translate: TranslateService) {
+    this.translate.addLangs(['en', 'sk']);
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
+  }
 
+  onLanguageChange(): void {
+    if (this.translate.currentLang === 'en') {
+      this.translate.use('sk');
+    } else {
+      this.translate.use('en');
+    }
+  }
+
+  getCurrentLAnguage(): string {
+    return this.translate.currentLang.toUpperCase();
   }
 }
