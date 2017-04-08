@@ -26,15 +26,16 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 
 before_script:
-  - npm install coveralls
+  - npm run lint
+  - npm run e2e
+  - npm test
 
 script:
-  - npm run lint
+  - npm run coveralls
   - npm run build-prod
-  - npm test --single-run --code-coverage
 
 after_script:
-  - cat ./coverage/coverage.lcov | ./node_modules/coveralls/bin/coveralls.js
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 deploy:
     provider: firebase
