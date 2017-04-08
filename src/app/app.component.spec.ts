@@ -29,13 +29,15 @@ describe('AppComponent', () => {
           useValue: translateServiceStub
         },
       ]
-    }).compileComponents();
-    fixture = TestBed.createComponent(AppComponent);
-    component = fixture.debugElement.componentInstance;
-    translateService = TestBed.get(TranslateService);
-    de = fixture.debugElement.query(By.css('app-root'));
-    el = fixture.debugElement.nativeElement;
-    fixture.detectChanges();
+    }).compileComponents()
+     .then(() => {
+       fixture = TestBed.createComponent(AppComponent);
+       component = fixture.debugElement.componentInstance;
+       translateService = TestBed.get(TranslateService);
+       de = fixture.debugElement.query(By.css('app-root'));
+       el = fixture.debugElement.nativeElement;
+       fixture.detectChanges();
+     });
   }));
 
   it('should create the app', async(() => {

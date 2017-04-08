@@ -1,7 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {
-  AgmCoreModule
-} from 'angular2-google-maps/core';
 
 @Component({
   selector: 'app-google-maps',

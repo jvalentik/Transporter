@@ -7,8 +7,11 @@ describe('transporter App', () => {
     page = new TransporterPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying app works', (done) => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    page.getParagraphText().then((onResolve) => {
+      expect(onResolve).toEqual('app works!');
+      done();
+    });
   });
 });
