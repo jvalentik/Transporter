@@ -5,8 +5,22 @@ language: node_js
 node_js:
   - '7.7'
 
+git:
+  depth: 3
+
+branches:
+  only:
+    - master
+    - develop
+
 notifications:
   email: false
+  webhooks:
+    urls:
+     - https://webhooks.gitter.im/e/73ddb79f211dcc47d04b
+    on_failure: always
+    on_start: change
+    on_success: change
 
 before_install:
  - export CHROME_BIN=/usr/bin/google-chrome
@@ -18,12 +32,9 @@ before_install:
  - sudo dpkg -i google-chrome*.deb
 
 before_script:
-  - npm run lint
-  - npm run e2e
-  - npm test
+  - npm run lint && npm run e2e && npm test && npm run coveralls
 
 script:
-  - npm run coveralls
   - npm run build-prod
 
 deploy:
