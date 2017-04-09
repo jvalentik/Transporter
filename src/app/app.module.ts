@@ -10,6 +10,11 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { HomeModule } from './home/home.module';
+import { RoutingModule } from './app-routing.module';
+import { TransportsModule } from './transports/transports.module';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http);
@@ -17,7 +22,9 @@ export function HttpLoaderFactory(http: Http) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ToolbarComponent,
+    SidenavComponent
   ],
   imports: [
     AgmCoreModule.forRoot(environment.googleMaps),
@@ -25,8 +32,11 @@ export function HttpLoaderFactory(http: Http) {
     BrowserAnimationsModule,
     BrowserModule,
     FlexLayoutModule,
+    HomeModule,
     HttpModule,
+    RoutingModule,
     SharedModule,
+    TransportsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -34,8 +44,6 @@ export function HttpLoaderFactory(http: Http) {
         deps: [Http]
       }
     })
-  ],
-  providers: [
   ],
   bootstrap: [AppComponent]
 })

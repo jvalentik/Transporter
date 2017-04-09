@@ -44,27 +44,12 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy();
   }));
 
-  it(`should have as title 'App works!'`, async(() => {
-    expect(component.title).toEqual('app works!');
-  }));
-
-  it('should render title in a h1 tag', async(() => {
-    expect(el.querySelector('h1').textContent).toContain('app works!');
+  it('should render contain toolbar', async(() => {
+    expect(el.querySelector('app-toolbar')).toBeTruthy();
   }));
 
   it('should set language to English', async(() => {
     const currentLanguage = translateService.currentLang;
     expect(currentLanguage).toEqual('en');
-  }));
-
-  it('should change language', async(() => {
-    component.onLanguageChange();
-    let currentLang = component.getCurrentLAnguage();
-    fixture.detectChanges();
-    expect(currentLang).toEqual('SK');
-    component.onLanguageChange();
-    currentLang = component.getCurrentLAnguage();
-    fixture.detectChanges();
-    expect(currentLang).toEqual('EN');
   }));
 });

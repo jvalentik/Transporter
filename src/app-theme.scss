@@ -1,0 +1,25 @@
+@import "./app/toolbar/toolbar-theme";
+@import './app/sidenav/sidenav-theme';
+
+@mixin material-site-app-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .site-app-background {
+    background: mat-color($background, background);
+  }
+
+  .site-primary-header {
+    background: mat-color($primary);
+
+    h1 {
+      color: mat-color($primary, default-contrast);
+    }
+  }
+
+  @include toolbar-theme($theme);
+  @include sidenav-theme($theme);
+}

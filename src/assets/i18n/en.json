@@ -1,3 +1,21 @@
 {
-  "TITLE": "Welcome to Transport Manager Application"
+  "toolbar": {
+    "sideMenuTooltipMsg": "Open menu"
+  },
+  "sidenav": {
+    "transport": {
+      "label": "Transports",
+      "view1": "Today",
+      "view2": "This week",
+      "view3": "This month"
+    },
+    "vehicles": {
+      "label": "Trucks",
+      "view1": "Manage"
+    },
+    "drivers": {
+      "label": "Drivers",
+      "view1": "Manage"
+    }
+  }
 }
