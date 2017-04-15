@@ -1,6 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/theming';
 @import '~angular-calendar/dist/css/angular-calendar.css';
+@import 'app-theme';
+
+@include mat-core();
+$primary: mat-palette($mat-blue);
+$accent:  mat-palette($mat-amber, A200, A100, A400);
+
+$theme: mat-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+@include material-site-app-theme($theme);
+
+$small-breakpoint-width: 840px;
 
 * {
   box-sizing: border-box;
@@ -20,4 +32,14 @@ body {
   min-width: 100vw;
   margin: 0;
   padding: 0;
+}
+
+[md-button],
+[md-raised-button] {
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  font-weight: normal;
 }

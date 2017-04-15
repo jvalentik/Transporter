@@ -1,3 +1,21 @@
 {
-  "TITLE": "Vitajte v aplikácii Manažér prepráv"
+  "toolbar": {
+    "sideMenuTooltipMsg": "Otvoriť menu"
+  },
+  "sidenav": {
+    "transport": {
+      "label": "Prepravy",
+      "view1": "Dnes",
+      "view2": "Tento týždeň",
+      "view3": "Tento mesiac"
+    },
+    "vehicles": {
+      "label": "Vozidlá",
+      "view1": "Spravuj"
+    },
+    "drivers": {
+      "label": "Vodiči",
+      "view1": "Spravuj"
+    }
+  }
 }

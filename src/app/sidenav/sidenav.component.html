@@ -1,0 +1,92 @@
+<md-sidenav-container class="site-sidenav-container">
+  <md-sidenav #sidenav
+              class="site-sidenav"
+              [opened]="!isScreenSmall()"
+              [mode]="isScreenSmall() ? 'over' : 'side'">
+    <nav>
+      <h3>
+        {{'sidenav.transport.label' | translate}}
+      </h3>
+      <ul>
+        <li>
+          <a [routerLink]="['./']"
+             routerLinkActive="site-sidenav-item-selected"
+             fxLayout="row"
+             fxLayoutAlign="start center">
+            <md-icon>
+              today
+            </md-icon>
+            <div class="side-menu-label">
+              {{'sidenav.transport.view1' | translate}}
+            </div>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['./']"
+             routerLinkActive="site-sidenav-item-selected"
+             fxLayout="row"
+             fxLayoutAlign="start center">
+            <md-icon>
+              view_week
+            </md-icon>
+            <div class="side-menu-label">
+              {{'sidenav.transport.view2' | translate}}
+            </div>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['./']"
+             routerLinkActive="site-sidenav-item-selected"
+             fxLayout="row"
+             fxLayoutAlign="start center">
+            <md-icon>
+              view_module
+            </md-icon>
+            <div class="side-menu-label">
+              {{'sidenav.transport.view3' | translate}}
+            </div>
+          </a>
+        </li>
+      </ul>
+      <h3>
+        {{'sidenav.vehicles.label' | translate}}
+      </h3>
+      <ul>
+        <li>
+          <a [routerLink]="['./']"
+             routerLinkActive="site-sidenav-item-selected"
+             fxLayout="row"
+             fxLayoutAlign="start center">
+            <md-icon>
+              queue
+            </md-icon>
+            <div class="side-menu-label">
+              {{'sidenav.vehicles.view1' | translate}}
+            </div>
+          </a>
+        </li>
+      </ul>
+      <h3>
+        {{'sidenav.drivers.label' | translate}}
+      </h3>
+      <ul>
+        <li>
+          <a [routerLink]="['./']"
+             routerLinkActive="site-sidenav-item-selected"
+             fxLayout="row"
+             fxLayoutAlign="start center">
+            <md-icon>
+              queue
+            </md-icon>
+            <div class="side-menu-label">
+              {{'sidenav.drivers.view1' | translate}}
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </md-sidenav>
+  <div class="site-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>
