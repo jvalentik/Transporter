@@ -31,8 +31,8 @@ before_install:
  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
  - sudo dpkg -i google-chrome*.deb
 
-before_script:
-  - npm run lint && npm run e2e && npm test && npm run coveralls
+
+
 
 script:
   - npm run build-prod
