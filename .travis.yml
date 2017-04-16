@@ -32,13 +32,12 @@ before_install:
  - sudo dpkg -i google-chrome*.deb
 
 before_script:
-  - npm install
-
-script:
   - npm run lint
   - npm test
   - npm run coveralls
   - npm run e2e
+
+script:
   - npm run build-prod
 
 deploy:
