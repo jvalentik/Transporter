@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WeekComponent } from './week.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { TestingHelperModule } from '../../../testing/testing-helper.module';
 
 describe('WeekComponent', () => {
   let component: WeekComponent;
@@ -8,7 +10,13 @@ describe('WeekComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WeekComponent ]
+      imports: [
+        TestingHelperModule
+      ],
+      declarations: [ WeekComponent ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ]
     })
     .compileComponents();
   }));
