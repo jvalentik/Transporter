@@ -3,7 +3,7 @@ import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { TranslateService } from '@ngx-translate/core';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('AppComponent', () => {
   let translateServiceStub: any;
@@ -17,7 +17,8 @@ describe('AppComponent', () => {
       currentLang: '',
       addLangs: function(array: Array<string>) { },
       setDefaultLang: function(lang: string) { this.currentLang = lang; },
-      use: function(lang: string) { this.currentLang = lang; }
+      use: function(lang: string) { this.currentLang = lang; },
+      getBrowserLang: function () { return 'en'; }
     };
     TestBed.configureTestingModule({
       declarations: [
@@ -27,7 +28,10 @@ describe('AppComponent', () => {
         {
           provide: TranslateService,
           useValue: translateServiceStub
-        },
+        }
+      ],
+      schemas: [
+        NO_ERRORS_SCHEMA
       ]
     }).compileComponents()
      .then(() => {

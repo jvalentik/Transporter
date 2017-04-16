@@ -7,10 +7,10 @@ describe('transporter App', () => {
     page = new TransporterPage();
   });
 
-  it('should display message saying app works', (done) => {
+  it('should display message saying home works', (done) => {
     page.navigateTo();
     page.getParagraphText().then((onResolve) => {
-      expect(onResolve).toEqual('app works!');
+      expect(onResolve).toEqual('home works!');
       done();
     });
   });

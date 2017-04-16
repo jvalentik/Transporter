@@ -5,7 +5,7 @@ import { By } from '@angular/platform-browser';
 import { logging } from 'selenium-webdriver';
 import Type = logging.Type;
 import { DebugElement } from '@angular/core';
-import { AgmCoreModule } from 'angular2-google-maps/core';
+import { AgmCoreModule } from '@agm/core';
 
 describe('GoogleMapsComponent', () => {
   let component: GoogleMapsComponent;
