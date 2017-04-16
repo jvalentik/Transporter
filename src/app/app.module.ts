@@ -13,8 +13,9 @@ import { AgmCoreModule } from '@agm/core';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HomeModule } from './home/home.module';
-import { RoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { TransportsModule } from './transports/transports.module';
+import { CoreModule } from './core/core.module';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http);
@@ -31,10 +32,9 @@ export function HttpLoaderFactory(http: Http) {
     AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule,
     BrowserModule,
-    FlexLayoutModule,
+    CoreModule,
     HomeModule,
     HttpModule,
-    RoutingModule,
     SharedModule,
     TransportsModule,
     TranslateModule.forRoot({
@@ -43,7 +43,8 @@ export function HttpLoaderFactory(http: Http) {
         useFactory: HttpLoaderFactory,
         deps: [Http]
       }
-    })
+    }),
+    AppRoutingModule
   ],
   bootstrap: [AppComponent]
 })

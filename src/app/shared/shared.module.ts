@@ -7,21 +7,26 @@ import { CalendarModule } from 'angular-calendar';
 import { GoogleMapsComponent } from './google-maps/google-maps.component';
 import { AppMaterialModule } from '../app-material/app-material.module';
 import { AgmCoreModule } from '@agm/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
     AgmCoreModule,
     CommonModule,
+    FlexLayoutModule,
     FormsModule,
     HttpModule,
     AppMaterialModule,
-    CalendarModule.forRoot()
+    CalendarModule.forRoot(),
+    TranslateModule
   ],
   declarations: [
     GoogleMapsComponent
   ],
   exports: [
     CommonModule,
+    CalendarModule,
+    FlexLayoutModule,
     FormsModule,
     HttpModule,
     AppMaterialModule,

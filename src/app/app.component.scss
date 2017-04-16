@@ -11,3 +11,8 @@ app-root {
 app-root > app-sidenav {
   flex: 1 1 auto;
 }
+
+app-toolbar {
+  position: relative;
+  z-index: 10;
+}
