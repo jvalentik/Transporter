@@ -5,9 +5,10 @@
   "sidenav": {
     "transport": {
       "label": "Prepravy",
-      "view1": "Dnes",
-      "view2": "Tento týždeň",
-      "view3": "Tento mesiac"
+      "view1": "Domov",
+      "view2": "Dnes",
+      "view3": "Tento týždeň",
+      "view4": "Tento mesiac"
     },
     "vehicles": {
       "label": "Vozidlá",
@@ -17,5 +18,14 @@
       "label": "Vodiči",
       "view1": "Spravuj"
     }
+  },
+  "mainViewLabels": {
+    "day": "Denný prehľad",
+    "week": "Týždenný prehľad",
+    "month": "Mesačný prehľad",
+    "weekViewTitle": [
+      "Týždeň ",
+      " rok "
+    ]
   }
 }

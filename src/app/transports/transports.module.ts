@@ -3,15 +3,23 @@ import { CommonModule } from '@angular/common';
 import { TransportsComponent } from './transports.component';
 import { TodayComponent } from './today/today.component';
 import { TransportsRoutingModule } from './transports-routing.module';
+import { SharedModule } from '../shared/shared.module';
+import { MonthComponent } from './month/month.component';
+import { WeekComponent } from './week/week.component';
+import { CustomDateFormatter } from '../core/custom-date-formatter';
+import { CalendarDateFormatter } from 'angular-calendar';
 
 @NgModule({
   imports: [
     CommonModule,
+    SharedModule,
     TransportsRoutingModule
   ],
   declarations: [
     TransportsComponent,
-    TodayComponent
+    TodayComponent,
+    MonthComponent,
+    WeekComponent
   ]
 })
 export class TransportsModule { }

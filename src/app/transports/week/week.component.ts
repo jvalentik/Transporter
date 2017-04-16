@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-today',
-  templateUrl: './today.component.html',
-  styleUrls: ['./today.component.scss']
+  selector: 'app-week',
+  templateUrl: './week.component.html',
+  styleUrls: ['./week.component.scss']
 })
-export class TodayComponent implements OnInit {
+export class WeekComponent implements OnInit {
   viewDate: Date;
-  view = 'day';
+  view = 'week';
   locale: string;
 
   constructor(private translate: TranslateService) { }

@@ -61,7 +61,7 @@ app-sidenav {
     > a {
       box-sizing: border-box;
       display: block;
-      font-size: 14px;
+      font-size: 1em;
       font-weight: 400;
       line-height: ($sidenav-spacing-unit * 6) - 1;
       text-decoration: none;
@@ -69,8 +69,14 @@ app-sidenav {
       padding: 0 ($sidenav-spacing-unit * 2);
       position: relative;
 
-      &.site-sidenav-item-selected {
+      &.active {
         font-weight: 600;
+        color: #2196f3;
+      }
+
+      &:hover {
+        color: #2196f3;
+        background: #cfd8dc;
       }
     }
   }
