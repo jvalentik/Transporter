@@ -6,6 +6,6 @@ export class TransporterPage {
   }
 
   getParagraphText() {
-    return element(by.css('app-root div h1')).getText();
+    return element(by.css('app-root app-sidenav md-sidenav-container div div app-home p')).getText();
   }
 }
