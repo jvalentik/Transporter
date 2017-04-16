@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { CalendarModule } from 'angular-calendar';
 import { GoogleMapsComponent } from './google-maps/google-maps.component';
 import { AppMaterialModule } from '../app-material/app-material.module';
-import { AgmCoreModule } from 'angular2-google-maps/core';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   imports: [

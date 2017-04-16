@@ -9,7 +9,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
-import { AgmCoreModule } from 'angular2-google-maps/core';
+import { AgmCoreModule } from '@agm/core';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HomeModule } from './home/home.module';
