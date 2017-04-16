@@ -1,5 +1,6 @@
 @import "./app/toolbar/toolbar-theme";
 @import './app/sidenav/sidenav-theme';
+@import '~@angular/material/theming';
 
 @mixin material-site-app-theme($theme) {
   $primary: map-get($theme, primary);
@@ -14,12 +15,15 @@
 
   .site-primary-header {
     background: mat-color($primary);
+    min-width: 100vw;
 
     h1 {
       color: mat-color($primary, default-contrast);
     }
   }
 
+  @include angular-material-theme($theme);
   @include toolbar-theme($theme);
   @include sidenav-theme($theme);
 }
+

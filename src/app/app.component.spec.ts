@@ -4,22 +4,15 @@ import { AppComponent } from './app.component';
 import { TranslateService } from '@ngx-translate/core';
 import { By } from '@angular/platform-browser';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
+import { translateServiceStub } from '../testing/service-stubs';
 
 describe('AppComponent', () => {
-  let translateServiceStub: any;
   let fixture: ComponentFixture<AppComponent>;
   let component: AppComponent;
   let translateService: TranslateService;
   let de: DebugElement;
   let el: HTMLElement;
   beforeEach(async(() => {
-    translateServiceStub = {
-      currentLang: '',
-      addLangs: function(array: Array<string>) { },
-      setDefaultLang: function(lang: string) { this.currentLang = lang; },
-      use: function(lang: string) { this.currentLang = lang; },
-      getBrowserLang: function () { return 'en'; }
-    };
     TestBed.configureTestingModule({
       declarations: [
         AppComponent

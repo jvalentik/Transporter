@@ -9,12 +9,12 @@
       </h3>
       <ul>
         <li>
-          <a [routerLink]="['./']"
-             routerLinkActive="site-sidenav-item-selected"
+          <a routerLink="/home"
+             routerLinkActive="active"
              fxLayout="row"
              fxLayoutAlign="start center">
             <md-icon>
-              today
+              home
             </md-icon>
             <div class="side-menu-label">
               {{'sidenav.transport.view1' | translate}}
@@ -22,12 +22,12 @@
           </a>
         </li>
         <li>
-          <a [routerLink]="['./']"
-             routerLinkActive="site-sidenav-item-selected"
+          <a routerLink="/transports/today"
+             routerLinkActive="active"
              fxLayout="row"
              fxLayoutAlign="start center">
             <md-icon>
-              view_week
+              today
             </md-icon>
             <div class="side-menu-label">
               {{'sidenav.transport.view2' | translate}}
@@ -35,15 +35,28 @@
           </a>
         </li>
         <li>
-          <a [routerLink]="['./']"
-             routerLinkActive="site-sidenav-item-selected"
+          <a routerLink="/transports/week"
+             routerLinkActive="active"
+             fxLayout="row"
+             fxLayoutAlign="start center">
+            <md-icon>
+              view_week
+            </md-icon>
+            <div class="side-menu-label">
+              {{'sidenav.transport.view3' | translate}}
+            </div>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/transports/month"
+             routerLinkActive="active"
              fxLayout="row"
              fxLayoutAlign="start center">
             <md-icon>
               view_module
             </md-icon>
             <div class="side-menu-label">
-              {{'sidenav.transport.view3' | translate}}
+              {{'sidenav.transport.view4' | translate}}
             </div>
           </a>
         </li>
@@ -53,8 +66,8 @@
       </h3>
       <ul>
         <li>
-          <a [routerLink]="['./']"
-             routerLinkActive="site-sidenav-item-selected"
+          <a routerLink="/vehicles"
+             routerLinkActive="active"
              fxLayout="row"
              fxLayoutAlign="start center">
             <md-icon>
@@ -71,8 +84,8 @@
       </h3>
       <ul>
         <li>
-          <a [routerLink]="['./']"
-             routerLinkActive="site-sidenav-item-selected"
+          <a routerLink="/drivers"
+             routerLinkActive="active"
              fxLayout="row"
              fxLayoutAlign="start center">
             <md-icon>

@@ -22,7 +22,7 @@
       > a {
         color: mat-color($foreground, secondary-text);
 
-        &.is-selected,
+        &.active,
         &:hover,
         &:focus {
           background: mat-color($background, background);

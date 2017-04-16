@@ -2,17 +2,18 @@
   <md-card>
     <md-card-header>
       <md-card-title>
-        <h2>{{ 'mainViewLabels.day' | translate }}</h2>
+        <h2>{{ 'mainViewLabels.week' | translate }}</h2>
       </md-card-title>
       <md-card-subtitle>
         <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):locale }} </h3>
       </md-card-subtitle>
     </md-card-header>
     <md-card-content>
-      <mwl-calendar-day-view
+      <mwl-calendar-week-view
         [viewDate]="viewDate"
-        [locale]="locale">
-      </mwl-calendar-day-view>
+        [locale]="locale"
+        [weekStartsOn]=1>
+      </mwl-calendar-week-view>
     </md-card-content>
   </md-card>
 </div>
