@@ -6,8 +6,6 @@ import { TransportsRoutingModule } from './transports-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { MonthComponent } from './month/month.component';
 import { WeekComponent } from './week/week.component';
-import { CustomDateFormatter } from '../core/custom-date-formatter';
-import { CalendarDateFormatter } from 'angular-calendar';
 
 @NgModule({
   imports: [
