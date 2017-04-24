@@ -30,7 +30,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FormsModule,
     HttpModule,
     AppMaterialModule,
-    TranslateModule
+    TranslateModule,
+    GoogleMapsComponent
   ]
 })
 export class SharedModule { }

@@ -14,7 +14,9 @@ export class ToolbarComponent implements OnInit {
   @Output()
   toggleSidenav = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit() { }
 }

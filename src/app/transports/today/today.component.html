@@ -1,18 +1,32 @@
 <div>
+  <button md-fab
+          class="fab-fixed">
+    <md-icon>add</md-icon>
+  </button>
   <md-card>
-    <md-card-header>
-      <md-card-title>
-        <h2>{{ 'mainViewLabels.day' | translate }}</h2>
-      </md-card-title>
-      <md-card-subtitle>
-        <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):locale }} </h3>
-      </md-card-subtitle>
-    </md-card-header>
-    <md-card-content>
-      <mwl-calendar-day-view
-        [viewDate]="viewDate"
-        [locale]="locale">
-      </mwl-calendar-day-view>
-    </md-card-content>
+    <div fxLayout="row"
+         fxLayoutAlign="space-between start">
+      <md-card-header>
+        <md-card-title>
+          {{ 'mainViewLabels.day' | translate }}
+        </md-card-title>
+        <md-card-subtitle>
+          {{ viewDate | calendarDate:(view + 'ViewTitle'):locale }}
+        </md-card-subtitle>
+      </md-card-header>
+      <app-calendar-header [(viewDate)]="viewDate"
+                           [(view)]="view">
+      </app-calendar-header>
+    </div>
+    <mwl-calendar-day-view
+      class="cal-view"
+      [viewDate]="viewDate"
+      [locale]="locale"
+      [events]="events">
+    </mwl-calendar-day-view>
   </md-card>
 </div>
+
+
+
+

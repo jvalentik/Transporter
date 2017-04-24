@@ -9,30 +9,36 @@ import {
   MdToolbarModule,
   MdTooltipModule,
   MdSlideToggleModule,
+  MdListModule,
+  MdButtonToggleModule
 } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     MdAutocompleteModule,
+    MdButtonToggleModule,
     MdButtonModule,
     MdCardModule,
     MdIconModule,
     MdSlideToggleModule,
     MdTooltipModule,
     MdToolbarModule,
-    MdSidenavModule
+    MdSidenavModule,
+    MdListModule,
   ],
   declarations: [],
   exports: [
     MdAutocompleteModule,
     MdButtonModule,
+    MdButtonToggleModule,
     MdCardModule,
     MdIconModule,
     MdSlideToggleModule,
     MdTooltipModule,
     MdToolbarModule,
-    MdSidenavModule
+    MdSidenavModule,
+    MdListModule
   ]
 })
-export class AppMaterialModule { }
+export class AppMaterialModule {}

@@ -6,6 +6,7 @@ import { TransportsRoutingModule } from './transports-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { MonthComponent } from './month/month.component';
 import { WeekComponent } from './week/week.component';
+import { CalendarHeaderComponent } from './calendar-header/calendar-header.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { WeekComponent } from './week/week.component';
     TransportsComponent,
     TodayComponent,
     MonthComponent,
-    WeekComponent
+    WeekComponent,
+    CalendarHeaderComponent
   ]
 })
 export class TransportsModule { }
