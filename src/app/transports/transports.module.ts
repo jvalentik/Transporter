@@ -1,25 +1,35 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TransportsComponent } from './transports.component';
-import { TodayComponent } from './today/today.component';
-import { TransportsRoutingModule } from './transports-routing.module';
 import { SharedModule } from '../shared/shared.module';
-import { MonthComponent } from './month/month.component';
-import { WeekComponent } from './week/week.component';
-import { CalendarHeaderComponent } from './calendar-header/calendar-header.component';
+import { TransportsRoutingModule } from './routing/transports-routing.module';
+import {
+  TransportsComponent,
+  DayComponent,
+  WeekComponent,
+  MonthComponent,
+  CalendarHeaderComponent
+} from './components';
+import { TranslateModule } from '@ngx-translate/core';
+import { CustomDateFormatter } from './services/custom-date-formater';
+import { CalendarDateFormatter } from 'angular-calendar';
 
 @NgModule({
   imports: [
-    CommonModule,
     SharedModule,
+    TranslateModule,
     TransportsRoutingModule
   ],
   declarations: [
     TransportsComponent,
-    TodayComponent,
+    DayComponent,
     MonthComponent,
     WeekComponent,
     CalendarHeaderComponent
+  ],
+  providers: [ {
+    provide: CalendarDateFormatter,
+    useClass: CustomDateFormatter
+  }
+
   ]
 })
 export class TransportsModule { }

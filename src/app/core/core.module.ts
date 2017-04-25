@@ -1,17 +1,15 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { CalendarDateFormatter } from 'angular-calendar';
-import { CustomDateFormatter } from './custom-date-formatter';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../../environments/environment';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    SharedModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   declarations: [],
-  providers: [{
-    provide: CalendarDateFormatter,
-    useClass: CustomDateFormatter
-  }]
+  providers: []
 })
 export class CoreModule {
   constructor (@Optional() @SkipSelf() parentModule: CoreModule) {

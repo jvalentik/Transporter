@@ -1,37 +1,40 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
-import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { Http, HttpModule } from '@angular/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalendarModule } from 'angular-calendar';
-import { GoogleMapsComponent } from './google-maps/google-maps.component';
-import { AppMaterialModule } from '../app-material/app-material.module';
-import { AgmCoreModule } from '@agm/core';
+import { AppMaterialModule } from './app-material/app-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AgmCoreModule } from '@agm/core';
+import { environment } from '../../environments/environment';
+import 'hammerjs';
+
+
 
 @NgModule({
   imports: [
-    AgmCoreModule,
     CommonModule,
     FlexLayoutModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AppMaterialModule,
     CalendarModule.forRoot(),
-    TranslateModule
-  ],
-  declarations: [
-    GoogleMapsComponent
+    AgmCoreModule.forRoot(environment.googleMaps),
+
+
   ],
   exports: [
+    AgmCoreModule,
     CommonModule,
     CalendarModule,
     FlexLayoutModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
-    AppMaterialModule,
-    TranslateModule,
-    GoogleMapsComponent
+    AppMaterialModule
   ]
 })
 export class SharedModule { }

@@ -1,21 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule, Http } from '@angular/http';
-import { environment } from '../environments/environment';
-import { AppComponent } from './app.component';
-import { AngularFireModule } from 'angularfire2';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
-import { AgmCoreModule } from '@agm/core';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { HomeModule } from './home/home.module';
-import { AppRoutingModule } from './app-routing.module';
-import { TransportsModule } from './transports/transports.module';
+import { AppRoutingModule } from './routing/app-routing.module';
 import { CoreModule } from './core/core.module';
 
-import 'hammerjs';
+import {
+  AppComponent,
+  MapComponent,
+  ToolbarComponent
+} from './components';
+import { Http } from '@angular/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http);
@@ -24,18 +21,15 @@ export function HttpLoaderFactory(http: Http) {
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    MapComponent
   ],
   imports: [
-    AgmCoreModule.forRoot(environment.googleMaps),
-    AngularFireModule.initializeApp(environment.firebase),
-    BrowserAnimationsModule,
     BrowserModule,
+    BrowserAnimationsModule,
     CoreModule,
-    HomeModule,
-    HttpModule,
     SharedModule,
-    TransportsModule,
+    AppRoutingModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -43,7 +37,6 @@ export function HttpLoaderFactory(http: Http) {
         deps: [Http]
       }
     }),
-    AppRoutingModule
   ],
   bootstrap: [AppComponent]
 })

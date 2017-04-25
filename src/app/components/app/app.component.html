@@ -1,0 +1,84 @@
+<md-sidenav-container>
+  <md-sidenav #sidenav
+              class="app-sidenav"
+              [mode]="isScreenSmall() ? 'over' : 'side'">
+    <md-nav-list>
+      <h3 md-subheader>
+        {{'sidenav.transport.label' | translate}}
+      </h3>
+      <a md-list-item
+         routerLink="/map"
+         routerLinkActive="active">
+        <md-icon md-list-icon>
+          home
+        </md-icon>
+        <span md-line>{{'sidenav.transport.view1' | translate}}</span>
+      </a>
+      <a md-list-item
+         routerLink="/transports/day"
+         routerLinkActive="active">
+        <md-icon md-list-icon>
+          today
+        </md-icon>
+        <span md-line>
+          {{'sidenav.transport.view2' | translate}}
+        </span>
+      </a>
+      <a md-list-item
+        routerLink="/transports/week"
+         routerLinkActive="active">
+        <md-icon md-list-icon>
+          view_week
+        </md-icon>
+        <span md-line>
+          {{'sidenav.transport.view3' | translate}}
+        </span>
+      </a>
+      <a md-list-item
+        routerLink="/transports/month"
+         routerLinkActive="active">
+        <md-icon md-list-icon>
+          view_module
+        </md-icon>
+        <span md-line>
+          {{'sidenav.transport.view4' | translate}}
+        </span>
+      </a>
+      <md-divider></md-divider>
+      <h3 md-subheader>
+        {{'sidenav.vehicles.label' | translate}}
+      </h3>
+      <a md-list-item
+        routerLink="/vehicles"
+         routerLinkActive="active">
+        <md-icon md-list-icon>
+          queue
+        </md-icon>
+        <span md-line>
+          {{'sidenav.vehicles.view1' | translate}}
+        </span>
+      </a>
+      <md-divider></md-divider>
+      <h3 md-subheader>
+        {{'sidenav.drivers.label' | translate}}
+      </h3>
+      <a md-list-item
+        routerLink="/drivers"
+         routerLinkActive="active">
+        <md-icon md-list-icon>
+          queue
+        </md-icon>
+        <span md-line>
+          {{'sidenav.drivers.view1' | translate}}
+        </span>
+      </a>
+    </md-nav-list>
+  </md-sidenav>
+  <app-toolbar (toggleSidenav)="sidenav.toggle()">
+  </app-toolbar>
+  <div class="app-content">
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>
+
+
