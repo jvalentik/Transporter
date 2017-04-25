@@ -15,6 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { TransportsModule } from './transports/transports.module';
 import { CoreModule } from './core/core.module';
 
+import 'hammerjs';
+
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http);
 }
