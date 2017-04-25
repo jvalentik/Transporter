@@ -17,9 +17,7 @@ md-sidenav-container {
 
   &.mat-sidenav-container {
     background-color: mat-color($app-primary, lighter);
-
   }
-
 }
 
 md-sidenav-container /deep/ .mat-sidenav-content {
@@ -28,7 +26,8 @@ md-sidenav-container /deep/ .mat-sidenav-content {
 
 md-sidenav {
   height: 100vh;
-  width: 20vw;
+  min-width: 20vw !important;
+  max-width: 400px;
 }
 
 .app-content {

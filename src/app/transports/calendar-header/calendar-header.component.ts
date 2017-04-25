@@ -10,7 +10,9 @@ export class CalendarHeaderComponent implements OnInit {
 
   @Input() viewDate: Date;
 
-  @Output() viewDateChange: EventEmitter<string> = new EventEmitter();
+  @Output() viewChange: EventEmitter<string> = new EventEmitter();
+
+  @Output() viewDateChange: EventEmitter<Date> = new EventEmitter();
 
   constructor() { }
 
