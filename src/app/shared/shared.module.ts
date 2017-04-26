@@ -22,9 +22,7 @@ import 'hammerjs';
     HttpModule,
     AppMaterialModule,
     CalendarModule.forRoot(),
-    AgmCoreModule.forRoot(environment.googleMaps),
-
-
+    AgmCoreModule.forRoot(environment.googleMaps)
   ],
   exports: [
     AgmCoreModule,

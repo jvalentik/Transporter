@@ -1,22 +1,23 @@
 import { Customer } from './customer';
+import { Vehicle } from './vehicle';
+import { Driver } from './driver';
 /**
  * Created by johny on 25/04/2017.
  */
 
 export interface Trip {
-  id: string;
-  driverIds: Array<number>;
-  vehicleId: number;
-  sender: Customer;
-  receiver: Customer;
-  distance: number;
+  sendersIds: string[];
+  receiversIds: string[];
   loadingDate: Date;
   unloadingDate: Date;
-  state: TripState
+  status: TripStatus;
+  driverId: string;
+  totalDistance?: number;
 }
 
-export enum TripState {
-  RECEIVED,
+export enum TripStatus {
+  UNASSIGNED,
+  ASSIGNED,
   LOADED,
   PENDING,
   DELIVERED

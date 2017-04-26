@@ -27,8 +27,8 @@ export function HttpLoaderFactory(http: Http) {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    CoreModule,
     SharedModule,
+    CoreModule,
     AppRoutingModule,
     TranslateModule.forRoot({
       loader: {

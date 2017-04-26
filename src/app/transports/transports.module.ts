@@ -11,6 +11,7 @@ import {
 import { TranslateModule } from '@ngx-translate/core';
 import { CustomDateFormatter } from './services/custom-date-formater';
 import { CalendarDateFormatter } from 'angular-calendar';
+import { TransportAddEditComponent } from './components/transports/transport-add-edit/transport-add-edit.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { CalendarDateFormatter } from 'angular-calendar';
     DayComponent,
     MonthComponent,
     WeekComponent,
-    CalendarHeaderComponent
+    CalendarHeaderComponent,
+    TransportAddEditComponent
   ],
   providers: [ {
     provide: CalendarDateFormatter,

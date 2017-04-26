@@ -5,6 +5,7 @@ import {
   WeekComponent,
   MonthComponent,
 } from '../components';
+import { TransportAddEditComponent } from '../components/transports/transport-add-edit/transport-add-edit.component';
 
 export const transportsRoutes: Routes = [
   {
@@ -27,6 +28,10 @@ export const transportsRoutes: Routes = [
       {
         path: 'month',
         component: MonthComponent
+      },
+      {
+        path: 'add',
+        component: TransportAddEditComponent
       }
     ]
   }

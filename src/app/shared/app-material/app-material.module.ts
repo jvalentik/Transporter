@@ -10,35 +10,46 @@ import {
   MdTooltipModule,
   MdSlideToggleModule,
   MdListModule,
-  MdButtonToggleModule
+  MdButtonToggleModule, MdInputModule, MdSnackBarModule, MdDialogModule, MdChipsModule, MdMenuModule, MdTabsModule, MdSelectModule,
+  MdCheckboxModule
 } from '@angular/material';
 
 @NgModule({
   imports: [
-    CommonModule,
-    MdAutocompleteModule,
-    MdButtonToggleModule,
+    MdInputModule,
     MdButtonModule,
+    MdCheckboxModule,
+    MdSelectModule,
     MdCardModule,
-    MdIconModule,
-    MdSlideToggleModule,
-    MdTooltipModule,
-    MdToolbarModule,
-    MdSidenavModule,
     MdListModule,
-  ],
-  declarations: [],
-  exports: [
-    MdAutocompleteModule,
-    MdButtonModule,
-    MdButtonToggleModule,
-    MdCardModule,
-    MdIconModule,
-    MdSlideToggleModule,
-    MdTooltipModule,
-    MdToolbarModule,
+    MdTabsModule,
+    MdMenuModule,
     MdSidenavModule,
-    MdListModule
+    MdToolbarModule,
+    MdIconModule,
+    MdChipsModule,
+    MdDialogModule,
+    MdSnackBarModule,
+    MdTooltipModule,
+    MdAutocompleteModule
+  ],
+  exports: [
+    MdInputModule,
+    MdButtonModule,
+    MdCheckboxModule,
+    MdSelectModule,
+    MdCardModule,
+    MdListModule,
+    MdTabsModule,
+    MdMenuModule,
+    MdSidenavModule,
+    MdToolbarModule,
+    MdIconModule,
+    MdChipsModule,
+    MdDialogModule,
+    MdSnackBarModule,
+    MdTooltipModule,
+    MdAutocompleteModule
   ]
 })
 export class AppMaterialModule {}
