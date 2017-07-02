@@ -1,6 +1,10 @@
 {
+  "app": {
+    "title": "Správca prepráv"
+  },
   "toolbar": {
-    "sideMenuTooltipMsg": "Otvoriť menu"
+    "sideMenuTooltipMsg": "Otvoriť menu",
+    "search": "Hladaj adresu"
   },
   "sidenav": {
     "transport": {

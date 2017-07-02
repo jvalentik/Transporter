@@ -13,6 +13,7 @@ export const environment = {
     messagingSenderId: '308497949492'
   },
   googleMaps: {
-    apiKey: 'AIzaSyDJPy9QSmoRCYuka1LtxvXQiMm7KOcjFfM'
+    apiKey: 'AIzaSyDJPy9QSmoRCYuka1LtxvXQiMm7KOcjFfM',
+    libraries: ["places"]
   }
 };
