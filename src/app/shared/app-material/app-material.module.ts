@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {
   MdAutocompleteModule,
   MdButtonModule,
@@ -8,9 +7,14 @@ import {
   MdSidenavModule,
   MdToolbarModule,
   MdTooltipModule,
-  MdSlideToggleModule,
   MdListModule,
-  MdButtonToggleModule, MdInputModule, MdSnackBarModule, MdDialogModule, MdChipsModule, MdMenuModule, MdTabsModule, MdSelectModule,
+  MdInputModule,
+  MdSnackBarModule,
+  MdDialogModule,
+  MdChipsModule,
+  MdMenuModule,
+  MdTabsModule,
+  MdSelectModule,
   MdCheckboxModule
 } from '@angular/material';
 

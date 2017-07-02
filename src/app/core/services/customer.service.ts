@@ -2,16 +2,17 @@
  * Created by johny on 26/04/2017.
  */
 import { Injectable } from '@angular/core';
-import { AngularFire } from 'angularfire2';
-import { Observable } from 'rxjs/Observable';
+import { AngularFireDatabase,
+  FirebaseListObservable
+} from 'angularfire2/database';
 import { Customer } from '../../model/customer';
 
 @Injectable()
 export class CustomerService {
 
-  constructor(private af: AngularFire) {}
+  constructor(private db: AngularFireDatabase) {}
 
-  getCustomers(): Observable<Customer[]> {
-    return this.af.database.list('/customers');
+  getCustomers(): FirebaseListObservable<Array<Customer>> {
+    return this.db.list('/customers');
   }
 }

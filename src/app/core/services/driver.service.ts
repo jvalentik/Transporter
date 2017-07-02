@@ -5,18 +5,17 @@
  * Created by johny on 26/04/2017.
  */
 import { Injectable } from '@angular/core';
-import { AngularFire } from 'angularfire2';
-import { Observable } from 'rxjs/Observable';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Driver } from '../../model/driver';
 
 @Injectable()
 export class DriverService {
 
-  constructor(private af: AngularFire) {
+  constructor(private db: AngularFireDatabase) {
   }
 
-  getDrivers(): Observable<Driver[]> {
-    return this.af.database.list('/drivers');
+  getDrivers(): FirebaseListObservable<Array<Driver>> {
+    return this.db.list('/drivers');
   }
 
 }

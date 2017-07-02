@@ -5,18 +5,17 @@
  * Created by johny on 26/04/2017.
  */
 import { Injectable } from '@angular/core';
-import { AngularFire } from 'angularfire2';
-import { Observable } from 'rxjs/Observable';
 import { Vehicle } from '../../model/vehicle';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Injectable()
 export class VehicleService {
 
-  constructor(private af: AngularFire) {
+  constructor(private db: AngularFireDatabase) {
   }
 
-  getVehicles(): Observable<Vehicle[]> {
-    return this.af.database.list('/vehicles');
+  getVehicles(): FirebaseListObservable<Array<Vehicle>> {
+    return this.db.list('/vehicles');
   }
 
 }
