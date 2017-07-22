@@ -34,5 +34,3 @@ $my-app-theme-background: (
 $transport-app-theme: my-app-theme-fn($my-app-primary, $my-app-accent, $my-app-warn, $mat-light-theme-foreground, $my-app-theme-background);
 
 @include angular-material-theme($transport-app-theme);
-
-

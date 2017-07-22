@@ -1,0 +1,12 @@
+.mat-list-item {
+  a {
+    padding-left: 1em;
+    padding-right: 1em;
+    cursor: pointer;
+  }
+
+  &.active {
+    font-weight: 600;
+    color: indigo;
+  }
+}

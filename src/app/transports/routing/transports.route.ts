@@ -1,12 +1,8 @@
 import { Routes } from '@angular/router';
-import {
-  TransportsComponent,
-  DayComponent,
-  WeekComponent,
-  MonthComponent,
-} from '../components';
-import { TransportAddEditComponent } from '../components/transports/transport-add-edit/transport-add-edit.component';
-
+import { TransportsComponent } from '../containers/transports/transports.component';
+import { DayComponent } from '../components/day/day.component';
+import { WeekComponent } from '../components/week/week.component';
+import { MonthComponent } from '../components/month/month.component';
 export const transportsRoutes: Routes = [
   {
     path: '',
@@ -28,10 +24,6 @@ export const transportsRoutes: Routes = [
       {
         path: 'month',
         component: MonthComponent
-      },
-      {
-        path: 'add',
-        component: TransportAddEditComponent
       }
     ]
   }

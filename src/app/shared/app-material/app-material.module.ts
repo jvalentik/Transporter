@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import {
   MdAutocompleteModule,
   MdButtonModule,
+  MdDatepickerModule,
   MdCardModule,
   MdIconModule,
   MdSidenavModule,
@@ -30,6 +31,7 @@ import {
     MdMenuModule,
     MdSidenavModule,
     MdToolbarModule,
+    MdDatepickerModule,
     MdIconModule,
     MdChipsModule,
     MdDialogModule,
@@ -48,6 +50,7 @@ import {
     MdMenuModule,
     MdSidenavModule,
     MdToolbarModule,
+    MdDatepickerModule,
     MdIconModule,
     MdChipsModule,
     MdDialogModule,

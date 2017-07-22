@@ -1,0 +1,47 @@
+<app-sidenav [showSidenav]="showSidenav | async"
+             [sidenavMode]="sidenavMode | async"
+             (sideNavClosed)="onSidenavClosed()">
+  <app-nav-item header="{{'sidenav.transport.label' | translate}}"
+                routerLink="/map"
+                icon="home"
+                (activate)="closeIfSmall()">
+    {{'sidenav.transport.view1' | translate}}
+  </app-nav-item>
+  <app-nav-item routerLink="/transports/day"
+                icon="today"
+                (activate)="closeIfSmall()">
+    {{'sidenav.transport.view2' | translate}}
+  </app-nav-item>
+  <app-nav-item routerLink="/transports/week"
+                icon="view_week"
+                (activate)="closeIfSmall()">
+    {{'sidenav.transport.view3' | translate}}
+  </app-nav-item>
+  <app-nav-item routerLink="/transports/month"
+                icon="view_module"
+                [footer]="true"
+                (activate)="closeIfSmall()">
+    {{'sidenav.transport.view4' | translate}}
+  </app-nav-item>
+  <app-nav-item routerLink="/vehicles"
+                icon="queue"
+                header="{{'sidenav.vehicles.label' | translate}}"
+                [footer]="true"
+                (activate)="closeIfSmall()">
+    {{'sidenav.vehicles.view1' | translate}}
+  </app-nav-item>
+  <app-nav-item routerLink="/drivers"
+                icon="queue"
+                header="{{'sidenav.drivers.label' | translate}}"
+                [footer]="true"
+                (activate)="closeIfSmall()">
+    {{'sidenav.drivers.view1' | translate}}
+  </app-nav-item>
+  <app-toolbar (openMenu)="onToggleSidenav()"
+               [tooltipMsg]="'toolbar.sideMenuTooltipMsg' | translate">
+    {{ 'app.title' | translate }}
+  </app-toolbar>
+  <div class="app-content">
+    <router-outlet></router-outlet>
+  </div>
+</app-sidenav>
