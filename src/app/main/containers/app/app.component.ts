@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
@@ -7,9 +7,9 @@ import * as fromRoot from '../../../reducers';
 import {
   CloseSideNavAction,
   OpenSidenavAction,
-  ResizeWindowAction,
-  SetSidenavModeAction
+  ResizeWindowAction
 } from '../../actions/layout.actions';
+import { NavItem } from '../../models/nav-item';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +26,7 @@ export class AppComponent implements OnInit {
   }
   showSidenav: Observable<boolean>;
   sidenavMode: Observable<string>;
+  viewList: Array<NavItem>;
   isOpen: boolean;
   mode: string;
 
@@ -43,6 +44,10 @@ export class AppComponent implements OnInit {
     this.store.select(fromRoot.getSidenavMode)
         .subscribe(mode => {
           this.mode = mode;
+        });
+    this.store.select(fromRoot.getViewList)
+        .subscribe(views => {
+          this.viewList = views
         });
     this.translate.addLangs(['en', 'sk']);
     this.translate.setDefaultLang('en');

@@ -8,6 +8,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AgmCoreModule } from '@agm/core';
 import { environment } from '../../environments/environment';
 import 'hammerjs';
+import { ViewHeaderComponent } from './view-header/view-header.component';
+import { CapitalsPipe } from './capitals.pipe';
 
 
 
@@ -22,6 +24,10 @@ import 'hammerjs';
     CalendarModule.forRoot(),
     AgmCoreModule.forRoot(environment.googleMaps)
   ],
+  declarations: [
+    ViewHeaderComponent,
+    CapitalsPipe,
+  ],
   exports: [
     AgmCoreModule,
     CommonModule,
@@ -30,7 +36,8 @@ import 'hammerjs';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AppMaterialModule
+    AppMaterialModule,
+    ViewHeaderComponent
   ]
 })
 export class SharedModule { }

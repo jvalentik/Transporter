@@ -1,0 +1,9 @@
+md-card {
+  height: 100%;
+  overflow: hidden;
+  padding-left: 5px;
+
+  md-card-content {
+    overflow: scroll;
+  }
+}
