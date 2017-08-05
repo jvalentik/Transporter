@@ -40,6 +40,9 @@ before_script:
 script:
   - npm run build-prod
 
+after_script:
+  - ./.deploy_docs.sh
+
 deploy:
   skip_cleanup: true
   provider: firebase
@@ -47,4 +50,9 @@ deploy:
       secure: "1/--L0AaSGQs2QmPp__nTt2L239vvJ5OvhjiRQk3aA8pc"
   on:
     branch: master
+
+env:
+  global:
+    - GH_REF: https://github.com/jvalentik/Transporter.git
+    - secure: "ZKzSPlBgwhmVFreuiVcXtd5+ojdikLBnrU5AwU/t49T7wf2z52J3ToS2n5AenB1EEaUeQc38EdC8svaasPUwZ8GvVlYLcV0QUw6FuH4IrHs0fI0r8XyYcb3cRtI3e1o4mCzfjT1J3SJ8ZNpsOXx7i7z3oII0tcEpg3nurBHO3CYjWMg0tIxvrTnqqJ108QrL1zIp+D2X1X6ilNLT2H/R7582e2eCFS/qJTDN7rCzpS0P+TQ5KPnkOWhL4b1OMOOy6GmPIsRzCXTto1ALm9yqiuWQLrQlc6E312RQkG56SZQMy1KqxvIrwYJ0a2fBdELdDtK7E0pC6utUFw7DcpyMRrTg6a1TqnLu2bzvOvHZTxlBtYbRY9dVezHTSfZNNuLpKaChj1WFp5es9Rp+pCl59tyV0YQrILmxDecBDljUbqln3kZhjIsRLqTbyN7gBhw2AKrmdM2Tyv/dvn3oADRQYb2wcNYF4BmxV8QbdUccMInsfYVdBXga6jqAoYcSXfj4ReQmG1hlwpjwY3LD0kLFl7m8jWNLi+ryZqolmlWPX+zR47FrQLXFZMqFP705BdycqZtMQwMAD7d8bqxXjenqwnr7ZvAZf2MznfjsDQQ2JRlEkiYjmmAwwRYQbU2D1QM76JhIJZN/winlKedpmcRNb54izvBj0LMlGDEOh1+OMIo="
 
