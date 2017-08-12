@@ -9,6 +9,6 @@ export const environment = {
   },
   googleMaps: {
     apiKey: 'AIzaSyDJPy9QSmoRCYuka1LtxvXQiMm7KOcjFfM',
-    libraries: ["places"]
+    libraries: ['places']
   }
 };

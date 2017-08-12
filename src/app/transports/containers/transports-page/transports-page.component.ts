@@ -11,6 +11,7 @@ import { ChangeCalendarViewAction, ChangeViewDateAction } from '../../actions/ca
   styleUrls: ['./transports-page.component.scss']
 })
 export class TransportsPageComponent implements OnInit {
+  async: any;
   calendarOptions: Observable<CalendarOptions>;
   allCalendarViews: Observable<Array<string>>;
 
