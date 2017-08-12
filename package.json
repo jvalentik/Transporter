@@ -78,7 +78,8 @@
     "stylelint-config-standard": "^17.0.0",
     "ts-node": "^3.3.0",
     "tslint": "^5.6.0",
-    "typescript": "^2.4.2"
+    "typescript": "^2.4.2",
+    "validate-commit-msg": "^2.14.0"
   },
   "description": "App to manage a transport company",
   "main": "index.js",
