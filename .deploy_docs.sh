@@ -2,7 +2,6 @@
 
 cd documentation && \
 
-rm -R .git
 git init && \
 
 git config user.name "Travis CI" && \
