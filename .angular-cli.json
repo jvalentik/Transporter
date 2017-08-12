@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/angular-calendar/dist/css/angular-calendar.css",
         "transport-theme.scss",
         "styles.scss"
       ],

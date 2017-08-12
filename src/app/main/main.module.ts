@@ -8,26 +8,22 @@ import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 
+export const COMPONENTS = [
+  NavItemComponent,
+  ToolbarComponent,
+  SidenavComponent,
+  AppComponent,
+  NotFoundPageComponent,
+];
+
 @NgModule({
   imports: [
     SharedModule,
     TranslateModule,
     RouterModule
   ],
-  declarations: [
-    NavItemComponent,
-    ToolbarComponent,
-    SidenavComponent,
-    AppComponent,
-    NotFoundPageComponent
-  ],
-  exports: [
-    AppComponent,
-    NavItemComponent,
-    SidenavComponent,
-    ToolbarComponent,
-    NotFoundPageComponent
-  ],
+  declarations: COMPONENTS,
+  exports: COMPONENTS,
   schemas: [
     NO_ERRORS_SCHEMA
   ]

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { NavItem } from '../../models/nav-item';
 
 @Component({
   selector: 'app-nav-item',
@@ -7,9 +8,6 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavItemComponent {
-  @Input() header = '';
-  @Input() footer = false;
-  @Input() icon: string;
-  @Input() routerLink: string;
+  @Input() navItem: NavItem;
   @Output() activate: EventEmitter<void> = new EventEmitter();
 }

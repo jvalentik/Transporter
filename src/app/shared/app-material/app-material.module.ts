@@ -2,6 +2,21 @@ import { NgModule } from '@angular/core';
 import {
   MdAutocompleteModule,
   MdButtonModule,
+  MdCardModule,
+  MdCheckboxModule,
+  MdChipsModule,
+  MdDatepickerModule,
+  MdDialogModule,
+  MdIconModule,
+  MdInputModule,
+  MdListModule,
+  MdMenuModule,
+  MdSelectModule, MdSidenavModule, MdSnackBarModule,
+  MdTabsModule, MdToolbarModule, MdTooltipModule
+} from '@angular/material';
+const MODULES = [
+  MdAutocompleteModule,
+  MdButtonModule,
   MdDatepickerModule,
   MdCardModule,
   MdIconModule,
@@ -17,46 +32,10 @@ import {
   MdTabsModule,
   MdSelectModule,
   MdCheckboxModule
-} from '@angular/material';
+];
 
 @NgModule({
-  imports: [
-    MdInputModule,
-    MdButtonModule,
-    MdCheckboxModule,
-    MdSelectModule,
-    MdCardModule,
-    MdListModule,
-    MdTabsModule,
-    MdMenuModule,
-    MdSidenavModule,
-    MdToolbarModule,
-    MdDatepickerModule,
-    MdIconModule,
-    MdChipsModule,
-    MdDialogModule,
-    MdSnackBarModule,
-    MdTooltipModule,
-    MdAutocompleteModule
-  ],
-  exports: [
-    MdInputModule,
-    MdButtonModule,
-    MdCheckboxModule,
-    MdSelectModule,
-    MdCardModule,
-    MdListModule,
-    MdTabsModule,
-    MdMenuModule,
-    MdSidenavModule,
-    MdToolbarModule,
-    MdDatepickerModule,
-    MdIconModule,
-    MdChipsModule,
-    MdDialogModule,
-    MdSnackBarModule,
-    MdTooltipModule,
-    MdAutocompleteModule
-  ]
+  imports: MODULES,
+  exports: MODULES
 })
 export class AppMaterialModule {}

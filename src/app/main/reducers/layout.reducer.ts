@@ -1,4 +1,5 @@
 import * as layout from '../actions/layout.actions';
+import { NavItem } from '../models/nav-item';
 
 const SMALL_SCREEN = 840;
 
@@ -7,13 +8,29 @@ export interface State {
   sideNavMode: string;
   windowHeight: number;
   windowWidth: number;
+  viewList: Array<NavItem>;
 }
 
 const initialState: State = {
   showSidenav: window.screen.width >= SMALL_SCREEN,
   sideNavMode: window.screen.width >= SMALL_SCREEN ? 'side' : 'over',
   windowHeight: window.screen.height,
-  windowWidth: window.screen.width
+  windowWidth: window.screen.width,
+  viewList: [
+    {
+      header: 'Transports',
+      title: 'Home',
+      showFooter: false,
+      icon: 'home',
+      routerLink: '/map'
+    },
+    {
+      title: 'My transports',
+      showFooter: true,
+      icon: 'today',
+      routerLink: '/transports'
+    }
+  ] as Array<NavItem>
 };
 
 export function reducer(state = initialState, action: layout.Actions): State {
@@ -40,7 +57,7 @@ export function reducer(state = initialState, action: layout.Actions): State {
         showSidenav: showSidenav,
         sideNavMode: sideNavMode,
         windowHeight: height,
-        windowWidth: width
+        windowWidth: width,
       });
     default:
       return state;
@@ -51,3 +68,4 @@ export const getShowSidenav = (state: State) => state.showSidenav;
 export const getSidenavMode = (state: State) => state.sideNavMode;
 export const getWindowWidth = (state: State) => state.windowWidth;
 export const getWindowHeight = (state: State) => state.windowHeight;
+export const getViewList = (state: State) => state.viewList;

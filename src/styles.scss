@@ -1,20 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
-@import '~angular-calendar/dist/css/angular-calendar.css';
 
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  height: 100vh;
-}
-
-body {
+html,
+body,
+app-root {
+  height: 100%;
+  width: 100%;
   margin: 0;
-  height: 100vh;
   padding: 0;
   font-family:
     Roboto,

@@ -1,0 +1,15 @@
+{
+  "types": ["feat", "fix", "docs", "style", "refactor", "test", "build", "chore", "revert"],
+  "scope": {
+    "required": false,
+    "allowed": ["*"],
+    "validate": false,
+    "multiple": false
+  },
+  "warnOnFail": false,
+  "maxSubjectLength": 100,
+  "subjectPattern": ".+",
+  "subjectPatternErrorMsg": "subject does not match subject pattern!",
+  "helpMessage": "\nPlease fix your commit message",
+  "autoFix": true
+}

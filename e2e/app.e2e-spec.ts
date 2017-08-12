@@ -1,38 +1,35 @@
-import { TransporterPage } from './app.po';
 
-describe('transporter App', () => {
-  let page: TransporterPage;
+import { $, browser, by, element } from 'protractor';
+
+
+xdescribe('transporter App', () => {
 
   beforeEach(() => {
-    page = new TransporterPage();
+    browser.get('/');
   });
 
-  it('should display message saying home works', (done) => {
-    page.navigateTo();
-    page.getParagraphText()
-        .then((onResolve) => {
-          expect(onResolve).toEqual('home works!');
-          done();
-        });
+  it('should have a toolbar with title Transporter manager', () => {
+    element(by.css('md-toolbar-row.mat-toolbar-row'))
+      .getText()
+      .then(title => {
+        expect(title).toContain('Transport manager');
+      });
   });
 
-  it('should hide and show side menu', (done) => {
-    page.navigateTo();
-    page
-      .isMenuShown()
-      .then((onResolve) => {
-        expect(onResolve).toBeTruthy();
-        return Promise.resolve;
-      })
-      .then(() => {
-        return page.clickMenu();
-      })
-      .then(() => {
-        return page.isMenuShown();
-      })
-      .then((onResolve) => {
-        expect(onResolve).toBeFalsy();
-        done();
+  xit('should show side menu on start', () => {
+    $('md-sidenav').getAttribute('class')
+                   .then(classAttribute => {
+                     expect(classAttribute).toContain('mat-sidenav-opened');
+                   });
+  });
+
+  it('should close menu when clicked menu button', () => {
+    browser.get('/');
+    const sideNav = $('md-sidenav');
+    $('button.mat-icon-button').click()
+      .then(() => sideNav.getAttribute('class'))
+      .then(classAttribute => {
+        expect(classAttribute).not.toContain('mat-sidenav-opened');
       });
   });
 });

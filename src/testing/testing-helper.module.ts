@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../app/shared/shared.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { Http } from '@angular/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { RouterLinkStubDirective, RouterOutletStubComponent } from './router-stubs';
+
 /**
  * Created by johny on 16/04/2017.
  */
 
-export function HttpLoaderFactory(http: Http) {
+export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
@@ -17,11 +18,12 @@ export function HttpLoaderFactory(http: Http) {
   imports: [
     CommonModule,
     SharedModule,
+    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [Http]
+        deps: [HttpClient]
       }
     })
   ],
