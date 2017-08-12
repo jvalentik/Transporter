@@ -1,6 +1,10 @@
 {
+  "app": {
+    "title": "Transport manager"
+  },
   "toolbar": {
-    "sideMenuTooltipMsg": "Open menu"
+    "sideMenuTooltipMsg": "Open menu",
+    "search": "Look for an address"
   },
   "sidenav": {
     "transport": {

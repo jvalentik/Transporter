@@ -1,0 +1,13 @@
+md-sidenav-container {
+  height: 100vh;
+
+  md-sidenav {
+    height: 100vh;
+    min-width: 20vw !important;
+    max-width: 400px;
+  }
+
+  /deep/ .mat-sidenav-content {
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,14 @@
+<h3 md-subheader *ngIf="navItem.header">
+  {{ navItem.header }}
+</h3>
+<a md-list-item [routerLink]="navItem.routerLink"
+                routerLinkActive="active"
+                (click)="activate.emit()">
+  <md-icon md-list-icon>
+    {{ navItem.icon }}
+  </md-icon>
+  <span md-line>
+    <ng-content></ng-content>
+  </span>
+</a>
+<md-divider *ngIf="navItem.showFooter"></md-divider>

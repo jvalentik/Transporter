@@ -1,0 +1,43 @@
+<md-card fxLayout="column"
+         fxLayoutAlign="start stretch">
+  <md-card-header fxFlex="10"
+                  fxLayout="row">
+    <md-card-title>
+        {{ title }}
+    </md-card-title>
+    <md-card-subtitle>
+        {{ subTitle }}
+    </md-card-subtitle>
+  </md-card-header>
+  <md-card-content fxFlex>
+    <ng-content></ng-content>
+  </md-card-content>
+  <md-card-actions fxFlex="30"
+                   fxLayout="row"
+                   fxLayoutAlign="space-between start">
+    <span>
+      <button
+        md-button
+        (click)="viewDateChanged.emit('previous')">
+      <md-icon>navigate_before</md-icon>
+    </button>
+    <button
+      md-button
+      color="primary"
+      (click)="viewDateChanged.emit('today')">
+      <md-icon>today</md-icon>
+    </button>
+    <button
+      md-button
+      (click)="viewDateChanged.emit('next')">
+      <md-icon>navigate_next</md-icon>
+    </button>
+    </span>
+
+    <button md-fab
+            class="fab-fixed">
+      <md-icon>add</md-icon>
+    </button>
+  </md-card-actions>
+</md-card>
+

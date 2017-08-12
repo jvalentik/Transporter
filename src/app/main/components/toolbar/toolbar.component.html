@@ -1,0 +1,13 @@
+<md-toolbar color="primary"
+            class="mat-elevation-z6"
+            fxLayout>
+    <button #tooltip="mdTooltip"
+            [mdTooltip]="tooltipMsg"
+            md-icon-button
+            (click)="openMenu.emit()">
+      <md-icon>
+        menu
+      </md-icon>
+    </button>
+  <ng-content></ng-content>
+</md-toolbar>

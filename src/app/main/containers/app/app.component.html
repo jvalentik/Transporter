@@ -1,0 +1,16 @@
+<app-sidenav [showSidenav]="showSidenav | async"
+             [sidenavMode]="sidenavMode | async"
+             (sideNavClosed)="onSidenavClosed()">
+  <app-nav-item *ngFor="let navItem of viewList"
+                [navItem] = navItem
+                (activate)="closeIfSmall()">
+    {{ navItem.title  }}
+  </app-nav-item>
+  <app-toolbar (openMenu)="onToggleSidenav()"
+               [tooltipMsg]="'toolbar.sideMenuTooltipMsg' | translate">
+    {{ 'app.title' | translate }}
+  </app-toolbar>
+  <div class="app-content">
+    <router-outlet></router-outlet>
+  </div>
+</app-sidenav>
