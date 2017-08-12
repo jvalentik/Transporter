@@ -28,3 +28,4 @@ export const getSidenavMode = createSelector(getLayoutState, fromLayout.getSiden
 export const getWindowWidth = createSelector(getLayoutState, fromLayout.getWindowWidth);
 export const getWindowHeight = createSelector(getLayoutState, fromLayout.getWindowHeight);
 export const getViewList = createSelector(getLayoutState, fromLayout.getViewList);
+export const getLocale = createSelector(getLayoutState, fromLayout.getLocale);

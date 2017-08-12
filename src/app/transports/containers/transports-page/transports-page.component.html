@@ -1,17 +1,21 @@
 <app-view-header [viewList]="allCalendarViews | async"
                  (viewChanged)="onViewChanged($event)">
 </app-view-header>
-<app-calendar [title]="(calendarOptions | async).title"
+<app-calendar [title]="(calendarOptions | async).title | translate"
               [subTitle]="(calendarOptions | async).subTitle"
               [ngSwitch]="(calendarOptions | async).viewType"
               (viewDateChanged)="onViewDateChanged($event)">
   <mwl-calendar-day-view *ngSwitchCase="'day'"
-                         [viewDate]="(calendarOptions | async).viewDate">
+                         [viewDate]="(calendarOptions | async).viewDate"
+                         [locale]="locale | async">
   </mwl-calendar-day-view>
   <mwl-calendar-week-view *ngSwitchCase="'week'"
-                          [viewDate]="(calendarOptions | async).viewDate">
+                          [viewDate]="(calendarOptions | async).viewDate"
+                          [locale]="locale | async"
+                          [weekStartsOn]=1>
   </mwl-calendar-week-view>
   <mwl-calendar-month-view *ngSwitchCase="'month'"
-                           [viewDate]="(calendarOptions | async).viewDate">
+                           [viewDate]="(calendarOptions | async).viewDate"
+                           [locale]="locale | async">
   </mwl-calendar-month-view>
 </app-calendar>

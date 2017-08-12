@@ -4,6 +4,7 @@ export const OPEN_SIDENAV = '[Layout] Open Sidenav';
 export const CLOSE_SIDENAV = '[Layout] Close Sidenav';
 export const SET_SIDENAV_MODE = '[Layout] Set Sidenav Mode';
 export const RESIZE_WINDOW = '[Layout] Resize Window';
+export const SET_LOCALE = '[Layout] Set Locale';
 
 export class OpenSidenavAction implements Action {
   readonly type = OPEN_SIDENAV;
@@ -29,8 +30,15 @@ export class ResizeWindowAction implements Action {
   constructor(public payload: Object) {}
 }
 
+export class SetLocaleAction implements Action {
+  readonly type = SET_LOCALE;
+
+  constructor(public payload: string) {}
+}
+
 export type Actions =
   | OpenSidenavAction
   | CloseSideNavAction
   | SetSidenavModeAction
-  | ResizeWindowAction;
+  | ResizeWindowAction
+  | SetLocaleAction;

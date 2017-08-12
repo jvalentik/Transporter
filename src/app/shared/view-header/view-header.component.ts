@@ -6,6 +6,7 @@ import {
   OnInit,
   Output
 } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-view-header',
@@ -13,14 +14,14 @@ import {
   styleUrls: ['./view-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ViewHeaderComponent implements OnInit {
+export class ViewHeaderComponent {
   @Input()
   viewList: Array<string>;
+
   @Output()
   viewChanged: EventEmitter<string> = new EventEmitter();
+
   constructor() { }
 
-  ngOnInit() {
-  }
 
 }

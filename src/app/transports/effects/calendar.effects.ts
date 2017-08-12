@@ -18,11 +18,11 @@ export class CalendarEffects {
                     .map(toPayload)
                     .withLatestFrom(this.calOptions$, (newViewType, options) => ({newViewType, options}))
                     .switchMap(params => {
-                      return this.dateFormatter.transformDate(params.newViewType, params.options.viewDate);
+                      return this.dateFormatter.transformDate(params.newViewType, params.options.viewDate, params.options.locale);
                     }, (outer, inner) => {
                       const title = outer.newViewType === 'day' ?
-                        'Daily view' : outer.newViewType === 'month' ?
-                          'Monthly view' : 'Weekly view';
+                        'calendarHeader.day' : outer.newViewType === 'month' ?
+                          'calendarHeader.month' : 'calendarHeader.week';
                       return {
                         title: title,
                         subTitle: inner,
@@ -44,7 +44,7 @@ export class CalendarEffects {
                                params.options.viewDate)
                              .mergeMap(newDate => this.dateFormatter
                                                       .transformDate(params
-                                                        .options.viewType, newDate),
+                                                        .options.viewType, newDate, params.options.locale),
                                (newDate, newSubtitle) => {
                                  return {
                                    subTitle: newSubtitle,

@@ -10,4 +10,6 @@ import { NavItem } from '../../models/nav-item';
 export class NavItemComponent {
   @Input() navItem: NavItem;
   @Output() activate: EventEmitter<void> = new EventEmitter();
+
+  constructor() {}
 }

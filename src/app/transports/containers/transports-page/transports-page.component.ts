@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as fromTransports from '../../reducers'
+import * as fromRoot from '../../../reducers';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { CalendarOptions } from '../../models/calendar-options';
@@ -14,12 +15,14 @@ export class TransportsPageComponent implements OnInit {
   async: any;
   calendarOptions: Observable<CalendarOptions>;
   allCalendarViews: Observable<Array<string>>;
+  locale: Observable<string>;
 
   constructor(private store: Store<fromTransports.State>) { }
 
   ngOnInit() {
     this.calendarOptions = this.store.select(fromTransports.getCalendarOptions);
     this.allCalendarViews = this.store.select(fromTransports.getAllCalendarViews);
+    this.locale = this.store.select(fromRoot.getLocale);
     this.store.dispatch(new ChangeViewDateAction('today'));
   }
 

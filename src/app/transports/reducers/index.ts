@@ -31,12 +31,14 @@ export const getCalendarOptions = createSelector(
   getCalendarSubtitle,
   getCalendarViewType,
   getCalendarViewDate,
-  (title, subTitle, viewType, viewDate): CalendarOptions => {
+  fromRoot.getLocale,
+  (title, subTitle, viewType, viewDate, locale): CalendarOptions => {
     return {
       title,
       subTitle,
       viewType,
-      viewDate
+      viewDate,
+      locale
     };
   }
 );

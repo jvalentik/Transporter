@@ -7,7 +7,7 @@ import * as fromRoot from '../../../reducers';
 import {
   CloseSideNavAction,
   OpenSidenavAction,
-  ResizeWindowAction
+  ResizeWindowAction, SetLocaleAction
 } from '../../actions/layout.actions';
 import { NavItem } from '../../models/nav-item';
 
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
   }
   showSidenav: Observable<boolean>;
   sidenavMode: Observable<string>;
-  viewList: Array<NavItem>;
+  viewList: Observable<Array<NavItem>>;
   isOpen: boolean;
   mode: string;
 
@@ -34,6 +34,7 @@ export class AppComponent implements OnInit {
               private store: Store<fromRoot.State>) {
     this.showSidenav = this.store.select(fromRoot.getShowSidenav);
     this.sidenavMode = this.store.select(fromRoot.getSidenavMode);
+    this.viewList = this.store.select(fromRoot.getViewList);
   }
 
   ngOnInit() {
@@ -45,13 +46,10 @@ export class AppComponent implements OnInit {
         .subscribe(mode => {
           this.mode = mode;
         });
-    this.store.select(fromRoot.getViewList)
-        .subscribe(views => {
-          this.viewList = views
-        });
     this.translate.addLangs(['en', 'sk']);
     this.translate.setDefaultLang('en');
     const browserLang = this.translate.getBrowserLang();
+    this.store.dispatch(new SetLocaleAction(this.translate.getBrowserCultureLang().split('-')[0]));
     this.translate.use(browserLang.match(/en|sk/) ? browserLang : 'en');
   }
 

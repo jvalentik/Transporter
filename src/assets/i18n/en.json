@@ -3,27 +3,18 @@
     "title": "Transport manager"
   },
   "toolbar": {
-    "sideMenuTooltipMsg": "Open menu",
-    "search": "Look for an address"
+    "sideMenuTooltipMsg": "Open menu"
   },
   "sidenav": {
-    "transport": {
-      "label": "Transports",
-      "view1": "Home",
-      "view2": "Today",
-      "view3": "This week",
-      "view4": "This month"
+    "home": {
+      "title": "Home",
+      "header": "Transports"
     },
-    "vehicles": {
-      "label": "Trucks",
-      "view1": "Manage"
-    },
-    "drivers": {
-      "label": "Drivers",
-      "view1": "Manage"
+    "transports": {
+      "title": "My transports"
     }
   },
-  "mainViewLabels": {
+  "calendarHeader": {
     "day": "Daily overview",
     "week": "Weekly overview",
     "month": "Monthly overview",
@@ -31,5 +22,8 @@
       "Week ",
       " of "
      ]
-  }
+  },
+  "day": "Day",
+  "week": "Week",
+  "month": "Month"
 }

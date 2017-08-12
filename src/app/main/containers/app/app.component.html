@@ -1,10 +1,10 @@
 <app-sidenav [showSidenav]="showSidenav | async"
              [sidenavMode]="sidenavMode | async"
              (sideNavClosed)="onSidenavClosed()">
-  <app-nav-item *ngFor="let navItem of viewList"
+  <app-nav-item *ngFor="let navItem of viewList | async"
                 [navItem] = navItem
                 (activate)="closeIfSmall()">
-    {{ navItem.title  }}
+    {{ navItem.title | translate }}
   </app-nav-item>
   <app-toolbar (openMenu)="onToggleSidenav()"
                [tooltipMsg]="'toolbar.sideMenuTooltipMsg' | translate">

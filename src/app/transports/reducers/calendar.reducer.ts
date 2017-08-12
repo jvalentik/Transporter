@@ -9,7 +9,7 @@ export interface State {
 }
 
 const initialState: State = {
-    title: 'Daily view',
+    title: 'calendarHeader.day',
     subTitle: '',
     viewDate: new Date(),
     viewType: 'day',

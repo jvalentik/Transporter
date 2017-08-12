@@ -10,6 +10,7 @@ import { environment } from '../../environments/environment';
 import 'hammerjs';
 import { ViewHeaderComponent } from './view-header/view-header.component';
 import { CapitalsPipe } from './capitals.pipe';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -19,6 +20,7 @@ import { CapitalsPipe } from './capitals.pipe';
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
+    TranslateModule,
     HttpModule,
     AppMaterialModule,
     CalendarModule.forRoot(),
@@ -34,6 +36,7 @@ import { CapitalsPipe } from './capitals.pipe';
     CalendarModule,
     FlexLayoutModule,
     FormsModule,
+    TranslateModule,
     ReactiveFormsModule,
     HttpModule,
     AppMaterialModule,

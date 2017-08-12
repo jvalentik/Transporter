@@ -2,7 +2,7 @@
   <md-tab *ngFor="let view of viewList">
     <ng-template md-tab-label>
       <div (click)="viewChanged.emit(view)">
-        {{ view | capitals }}
+        {{ view | translate }}
       </div>
     </ng-template>
   </md-tab>

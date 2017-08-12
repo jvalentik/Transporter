@@ -1,5 +1,5 @@
 <h3 md-subheader *ngIf="navItem.header">
-  {{ navItem.header }}
+  {{ navItem.header | translate }}
 </h3>
 <a md-list-item [routerLink]="navItem.routerLink"
                 routerLinkActive="active"

@@ -9,6 +9,7 @@ export interface State {
   windowHeight: number;
   windowWidth: number;
   viewList: Array<NavItem>;
+  locale: string;
 }
 
 const initialState: State = {
@@ -16,16 +17,17 @@ const initialState: State = {
   sideNavMode: window.screen.width >= SMALL_SCREEN ? 'side' : 'over',
   windowHeight: window.screen.height,
   windowWidth: window.screen.width,
+  locale: 'en',
   viewList: [
     {
-      header: 'Transports',
-      title: 'Home',
+      header: 'sidenav.home.header',
+      title: 'sidenav.home.title',
       showFooter: false,
       icon: 'home',
       routerLink: '/map'
     },
     {
-      title: 'My transports',
+      title: 'sidenav.transports.title',
       showFooter: true,
       icon: 'today',
       routerLink: '/transports'
@@ -59,6 +61,11 @@ export function reducer(state = initialState, action: layout.Actions): State {
         windowHeight: height,
         windowWidth: width,
       });
+    case layout.SET_LOCALE:
+      const locale = action.payload;
+      return Object.assign({}, state, {
+        locale,
+    });
     default:
       return state;
   }
@@ -69,3 +76,4 @@ export const getSidenavMode = (state: State) => state.sideNavMode;
 export const getWindowWidth = (state: State) => state.windowWidth;
 export const getWindowHeight = (state: State) => state.windowHeight;
 export const getViewList = (state: State) => state.viewList;
+export const getLocale = (state: State) => state.locale;

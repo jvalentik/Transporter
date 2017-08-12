@@ -15,7 +15,7 @@ import { TransportsPageComponent } from './containers/transports-page/transports
 @NgModule({
   imports: [
     SharedModule,
-    TranslateModule,
+    TranslateModule.forChild(),
     TransportsRoutingModule,
     StoreModule.forFeature('transports', reducers),
     EffectsModule.forFeature([CalendarEffects])

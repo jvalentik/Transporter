@@ -10,18 +10,16 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class CustomDateFormatter extends CalendarDateFormatter {
-  locale: string;
 
   constructor(private translateService: TranslateService) {
     super();
-    this.locale = this.translateService.getBrowserCultureLang().split('-')[0];
   }
 
-  public transformDate(view: string, date: Date): Observable<string> {
-    return of(this[`${view}ViewTitle`]({date, locale: this.locale}));
+  public transformDate(view: string, date: Date, locale: string): Observable<string> {
+    return of(this[`${view}ViewTitle`]({date, locale: locale}));
   }
 
-  public moveDate(change: string, viewThype: string, date: Date): Observable<Date> {
+  public moveDate(change: string, viewType: string, date: Date): Observable<Date> {
     switch (change) {
       case 'today':
         return of(dateFn.startOfToday());
@@ -30,14 +28,14 @@ export class CustomDateFormatter extends CalendarDateFormatter {
           day: dateFn.subDays,
           week: dateFn.subWeeks,
           month: dateFn.subMonths
-        }[viewThype];
+        }[viewType];
         return of(subFn(date, 1));
       case 'next':
         const addFn: any = {
           day: dateFn.addDays,
           week: dateFn.addWeeks,
           month: dateFn.addMonths
-        }[viewThype];
+        }[viewType];
         return of(addFn(date, 1));
     }
   }
@@ -47,9 +45,9 @@ export class CustomDateFormatter extends CalendarDateFormatter {
       {year: 'numeric'}).format(date);
     const weekNumber: number = dateFn.getISOWeek(date);
     return `${this.translateService
-                  .instant('mainViewLabels.weekViewTitle')[0]}
+                  .instant('calendarHeader.weekViewTitle')[0]}
                    ${weekNumber}
                    ${this.translateService
-                         .instant('mainViewLabels.weekViewTitle')[1]} ${year}`;
+                         .instant('calendarHeader.weekViewTitle')[1]} ${year}`;
   }
 }

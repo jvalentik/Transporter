@@ -3,4 +3,5 @@ export interface CalendarOptions {
   subTitle: string;
   viewDate: Date;
   viewType: string;
+  locale: string;
 }

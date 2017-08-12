@@ -3,33 +3,27 @@
     "title": "Správca prepráv"
   },
   "toolbar": {
-    "sideMenuTooltipMsg": "Otvoriť menu",
-    "search": "Hladaj adresu"
+    "sideMenuTooltipMsg": "Otvoriť menu"
   },
   "sidenav": {
-    "transport": {
-      "label": "Prepravy",
-      "view1": "Domov",
-      "view2": "Dnes",
-      "view3": "Tento týždeň",
-      "view4": "Tento mesiac"
+    "home": {
+      "title": "Domov",
+      "header": "Prepravy"
     },
-    "vehicles": {
-      "label": "Vozidlá",
-      "view1": "Spravuj"
-    },
-    "drivers": {
-      "label": "Vodiči",
-      "view1": "Spravuj"
+    "transports": {
+      "title": "Moje prepravy"
     }
   },
-  "mainViewLabels": {
+  "calendarHeader": {
     "day": "Denný prehľad",
     "week": "Týždenný prehľad",
     "month": "Mesačný prehľad",
     "weekViewTitle": [
       "Týždeň ",
-      " rok "
+      " v roku "
     ]
-  }
+  },
+  "day": "Deň",
+  "week": "Týždeň",
+  "month": "Mesiac"
 }
