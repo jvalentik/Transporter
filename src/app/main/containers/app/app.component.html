@@ -7,6 +7,12 @@
     {{ navItem.title | translate }}
   </app-nav-item>
   <app-toolbar (openMenu)="onToggleSidenav()"
+               [isLoggedIn]="userLoggedIn | async"
+               [userName]="(loggedInUser | async)?.displayName"
+               [email]="(loggedInUser | async)?.email"
+               [avatarUrl]="(loggedInUser | async)?.photoURL"
+               (signIn)="onLogin()"
+               (signOut)="onLogout()"
                [tooltipMsg]="'toolbar.sideMenuTooltipMsg' | translate">
     {{ 'app.title' | translate }}
   </app-toolbar>

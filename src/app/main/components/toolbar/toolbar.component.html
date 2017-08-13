@@ -1,6 +1,5 @@
 <md-toolbar color="primary"
-            class="mat-elevation-z6"
-            fxLayout>
+            class="mat-elevation-z6">
     <button #tooltip="mdTooltip"
             [mdTooltip]="tooltipMsg"
             md-icon-button
@@ -9,5 +8,39 @@
         menu
       </md-icon>
     </button>
-  <ng-content></ng-content>
+  <span fxFlex="1 1 auto">
+    <ng-content></ng-content>
+  </span>
+  <div *ngIf="isLoggedIn; then userMenu else login"></div>
+  <ng-template #userMenu>
+    <button [style.background-image]="backgroundImg"
+            [ngStyle]="{'background-size': 'cover', 'border-radius': '50%'}"
+            md-icon-button
+            [mdMenuTriggerFor]="menu">
+    </button>
+    <md-menu #menu="mdMenu"
+             [overlapTrigger]="false">
+      <md-card>
+        <md-card-header>
+          <div md-card-avatar
+               [style.background-image]="backgroundImg"
+               [ngStyle]="{'background-size': 'cover'}">
+          </div>
+          <md-card-title>{{userName}}</md-card-title>
+          <md-card-subtitle>{{email}}</md-card-subtitle>
+        </md-card-header>
+      </md-card>
+      <button md-menu-item
+              (click)="signOut.emit()">
+        <md-icon>account_circle</md-icon>
+        <span>Sign out</span>
+      </button>
+    </md-menu>
+  </ng-template>
+  <ng-template #login>
+    <button md-button
+            (click)="signIn.emit()">
+      Sign in
+    </button>
+  </ng-template>
 </md-toolbar>

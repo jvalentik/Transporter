@@ -1,13 +1,27 @@
+$sidenav-width: 240px;
+
 md-sidenav-container {
   height: 100vh;
 
   md-sidenav {
     height: 100vh;
-    min-width: 20vw !important;
-    max-width: 400px;
+    width: $sidenav-width;
   }
 
   /deep/ .mat-sidenav-content {
     overflow: hidden;
+  }
+
+  .site-sidenav {
+    box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+    padding-bottom: 72px;
+    width: $sidenav-width;
+    bottom: 0;
+    overflow: auto;
+    height: 100%;
+
+    &.mat-sidenav-opened {
+      box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+    }
   }
 }
