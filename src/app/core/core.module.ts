@@ -3,14 +3,17 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../../environments/environment';
 import { SharedModule } from '../shared/shared.module';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthenticationService } from './services/authentication.service';
 
 @NgModule({
   imports: [
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: []
+  providers: [AuthenticationService]
 })
 export class CoreModule {
   constructor (@Optional() @SkipSelf() parentModule: CoreModule) {
