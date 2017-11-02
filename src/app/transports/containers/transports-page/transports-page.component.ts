@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as fromTransports from '../../reducers'
+import * as fromTransports from '../../reducers';
 import * as fromRoot from '../../../reducers';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';

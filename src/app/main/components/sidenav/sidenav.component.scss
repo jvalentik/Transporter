@@ -1,9 +1,9 @@
 $sidenav-width: 240px;
 
-md-sidenav-container {
+mat-sidenav-container {
   height: 100vh;
 
-  md-sidenav {
+  mat-sidenav {
     height: 100vh;
     width: $sidenav-width;
   }

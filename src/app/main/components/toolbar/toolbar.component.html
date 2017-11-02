@@ -1,12 +1,12 @@
-<md-toolbar color="primary"
+<mat-toolbar color="primary"
             class="mat-elevation-z6">
-    <button #tooltip="mdTooltip"
-            [mdTooltip]="tooltipMsg"
-            md-icon-button
+    <button #tooltip="matTooltip"
+            [matTooltip]="tooltipMsg"
+            mat-icon-button
             (click)="openMenu.emit()">
-      <md-icon>
+      <mat-icon>
         menu
-      </md-icon>
+      </mat-icon>
     </button>
   <span fxFlex="1 1 auto">
     <ng-content></ng-content>
@@ -15,32 +15,32 @@
   <ng-template #userMenu>
     <button [style.background-image]="backgroundImg"
             [ngStyle]="{'background-size': 'cover', 'border-radius': '50%'}"
-            md-icon-button
-            [mdMenuTriggerFor]="menu">
+            mat-icon-button
+            [matMenuTriggerFor]="menu">
     </button>
-    <md-menu #menu="mdMenu"
+    <mat-menu #menu="matMenu"
              [overlapTrigger]="false">
-      <md-card>
-        <md-card-header>
-          <div md-card-avatar
+      <mat-card>
+        <mat-card-header>
+          <div matCardAvatar
                [style.background-image]="backgroundImg"
                [ngStyle]="{'background-size': 'cover'}">
           </div>
-          <md-card-title>{{userName}}</md-card-title>
-          <md-card-subtitle>{{email}}</md-card-subtitle>
-        </md-card-header>
-      </md-card>
-      <button md-menu-item
+          <mat-card-title>{{userName}}</mat-card-title>
+          <mat-card-subtitle>{{email}}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+      <button mat-menu-item
               (click)="signOut.emit()">
-        <md-icon>account_circle</md-icon>
+        <mat-icon>account_circle</mat-icon>
         <span>Sign out</span>
       </button>
-    </md-menu>
+    </mat-menu>
   </ng-template>
   <ng-template #login>
-    <button md-button
+    <button mat-button
             (click)="signIn.emit()">
       Sign in
     </button>
   </ng-template>
-</md-toolbar>
+</mat-toolbar>

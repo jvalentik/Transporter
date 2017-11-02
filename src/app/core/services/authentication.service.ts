@@ -8,11 +8,11 @@ export class AuthenticationService {
   constructor(private af: AngularFireAuth) {
   }
 
-  login(): firebase.Promise<any> {
+  login(): Promise<any> {
     return this.af.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
 
-  logout(): firebase.Promise<any> {
+  logout(): Promise<any> {
     return this.af.auth.signOut();
   }
 }

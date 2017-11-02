@@ -3,7 +3,7 @@ import * as fromRoot from '../../reducers';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 export interface MapState {
-  status: fromMap.State
+  status: fromMap.State;
 }
 
 export interface State extends fromRoot.State {

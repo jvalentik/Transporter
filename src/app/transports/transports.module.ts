@@ -7,7 +7,7 @@ import { CalendarDateFormatter } from 'angular-calendar';
 import { TransportService } from './services/transport.service';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { StoreModule } from '@ngrx/store';
-import { reducers } from './reducers/index';
+import { reducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { CalendarEffects } from './effects/calendar.effects';
 import { TransportsPageComponent } from './containers/transports-page/transports-page.component';

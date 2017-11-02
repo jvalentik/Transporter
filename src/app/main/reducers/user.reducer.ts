@@ -2,7 +2,7 @@ import * as firebase from 'firebase/app';
 import * as user from '../actions/user.actions';
 
 export interface State {
-  user: firebase.User
+  user: firebase.User;
 }
 
 const initialState: State = {

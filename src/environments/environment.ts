@@ -9,6 +9,7 @@ export const environment = {
     apiKey: 'AIzaSyBFCMz6v-tCt1S_6vNSwEXB4Men1ot12uo',
     authDomain: 'transporter-fcd26.firebaseapp.com',
     databaseURL: 'https://transporter-fcd26.firebaseio.com',
+    projectId: 'transporter-fcd26',
     storageBucket: 'transporter-fcd26.appspot.com',
     messagingSenderId: '308497949492'
   },

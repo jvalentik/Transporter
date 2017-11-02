@@ -4,11 +4,11 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { CalendarOptions } from '../models/calendar-options';
 
 export interface TransportsState {
-  calendar: fromCalendar.State
+  calendar: fromCalendar.State;
 }
 
 export interface State extends fromRoot.State {
-  transports: TransportsState
+  transports: TransportsState;
 }
 
 export const reducers = {

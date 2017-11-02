@@ -5,7 +5,7 @@ export interface State {
   subTitle: string;
   viewDate: Date;
   viewType: string;
-  views: Array<string>
+  views: Array<string>;
 }
 
 const initialState: State = {

@@ -1,6 +1,13 @@
 import * as fromLayout from '../main/reducers/layout.reducer';
 import * as fromUser from '../main/reducers/user.reducer';
-import { ActionReducer, ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/store';
+import {
+  ActionReducer,
+  ActionReducerMap,
+  createFeatureSelector,
+  createSelector,
+  MetaReducer
+} from '@ngrx/store';
+import { storeFreeze } from 'ngrx-store-freeze';
 import { environment } from '../../environments/environment';
 
 export interface State {
@@ -13,15 +20,15 @@ export const reducers: ActionReducerMap<State> = {
   user: fromUser.reducer,
 };
 
-export function logger(reducer: ActionReducer<State>): ActionReducer<any, any> {
+export function logger(reducer: ActionReducer<State>): ActionReducer<State> {
   return function (state: State, action: any): State {
     console.log(`state: ${JSON.stringify(state)}`);
     console.log(`action: ${JSON.stringify(action)}`);
     return reducer(state, action);
-  }
+  };
 }
 
-export const metaReducers: ActionReducer<any, any>[] =
+export const metaReducers: MetaReducer<State>[] =
   !environment.production ? [logger] : [];
 
 export const getLayoutState = createFeatureSelector<fromLayout.State>('layout');

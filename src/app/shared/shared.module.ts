@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalendarModule } from 'angular-calendar';
 import { AppMaterialModule } from './app-material/app-material.module';
@@ -21,7 +21,7 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule,
     ReactiveFormsModule,
     TranslateModule,
-    HttpModule,
+    HttpClientModule,
     AppMaterialModule,
     CalendarModule.forRoot(),
     AgmCoreModule.forRoot(environment.googleMaps)
@@ -38,7 +38,7 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule,
     TranslateModule,
     ReactiveFormsModule,
-    HttpModule,
+    HttpClientModule,
     AppMaterialModule,
     ViewHeaderComponent
   ]

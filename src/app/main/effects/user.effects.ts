@@ -3,7 +3,6 @@ import * as User from '../actions/user.actions';
 import * as firebase from 'firebase/app';
 import { Injectable } from '@angular/core';
 import { Effect, Actions } from '@ngrx/effects';
-import { Store } from '@ngrx/store';
 import { AuthenticationService } from '../../core/services/authentication.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';

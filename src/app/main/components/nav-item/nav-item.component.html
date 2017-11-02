@@ -1,14 +1,15 @@
-<h3 md-subheader *ngIf="navItem.header">
+<h3 matSubheader *ngIf="navItem.header">
   {{ navItem.header | translate }}
 </h3>
-<a md-list-item [routerLink]="navItem.routerLink"
-                routerLinkActive="active"
-                (click)="activate.emit()">
-  <md-icon md-list-icon>
+<a mat-list-item
+   [routerLink]="navItem.routerLink"
+   routerLinkActive="active"
+   (click)="activate.emit()">
+  <mat-icon matListIcon>
     {{ navItem.icon }}
-  </md-icon>
-  <span md-line>
+  </mat-icon>
+  <span matLine>
     <ng-content></ng-content>
   </span>
 </a>
-<md-divider *ngIf="navItem.showFooter"></md-divider>
+<mat-divider *ngIf="navItem.showFooter"></mat-divider>

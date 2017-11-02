@@ -1,5 +1,5 @@
 import * as map from '../actions/map.actions';
-import { AgmPosition } from '../models/agm-position'
+import { AgmPosition } from '../models/agm-position';
 
 export interface State {
   position: AgmPosition;

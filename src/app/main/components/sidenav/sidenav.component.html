@@ -1,12 +1,12 @@
-<md-sidenav-container>
-  <md-sidenav class="site-sidenav"
+<mat-sidenav-container>
+  <mat-sidenav class="site-sidenav"
               [opened]="showSidenav"
               (close)="sideNavClosed.emit()"
               [mode]="sidenavMode">
-    <md-nav-list>
+    <mat-nav-list>
       <ng-content select="app-nav-item"></ng-content>
-    </md-nav-list>
-  </md-sidenav>
+    </mat-nav-list>
+  </mat-sidenav>
   <ng-content select="app-toolbar"></ng-content>
   <ng-content select=".app-content"></ng-content>
-</md-sidenav-container>
+</mat-sidenav-container>

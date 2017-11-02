@@ -14,13 +14,6 @@ import { NavItem } from '../../models/nav-item';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  @HostListener('window:resize', ['$event'])
-  onWindowResize(event: any) {
-    this.store.dispatch(new Layout.ResizeWindowAction({
-      width: event.target.innerWidth,
-      height: event.target.innerHeight
-    }));
-  }
   showSidenav: Observable<boolean>;
   sidenavMode: Observable<string>;
   viewList: Observable<Array<NavItem>>;
@@ -28,6 +21,14 @@ export class AppComponent implements OnInit {
   loggedInUser: Observable<firebase.User>;
   isOpen: boolean;
   mode: string;
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize(event: any) {
+    this.store.dispatch(new Layout.ResizeWindowAction({
+      width: event.target.innerWidth,
+      height: event.target.innerHeight
+    }));
+  }
 
   constructor(private translate: TranslateService,
               private store: Store<fromRoot.State>) {
